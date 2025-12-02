@@ -15,7 +15,9 @@ export const sseController = (req, res)=>{
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
     // res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    // Change it to this:
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || "http://localhost:5173");
     // Add the client's response object to the connections object
     connections[userId] = res
 
